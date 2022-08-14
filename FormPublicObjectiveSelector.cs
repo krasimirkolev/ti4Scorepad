@@ -13,10 +13,12 @@ namespace ti4Scorepad
     public partial class FormPublicObjectiveSelector : Form
     {
         public int returnValue { get; set; }
-        public FormPublicObjectiveSelector(int index)
+        public int Points;
+        public FormPublicObjectiveSelector(int index, int points)
         {
             InitializeComponent();
             this.returnValue = index;
+            this.Points = points;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace ti4Scorepad
             int selectedIndex = -1;
             for (int i = 0; i < ClassGlobalVariables.listPublicObjectives().Length; i++)
             {
-                if (ClassGlobalVariables.listPublicObjectives()[i].Index == this.returnValue || !publicObjectivesInPlay.Contains(i))
+                if ((ClassGlobalVariables.listPublicObjectives()[i].Index == this.returnValue || !publicObjectivesInPlay.Contains(i)) && ClassGlobalVariables.listPublicObjectives()[i].Points == this.Points.ToString())
                 {
                     comboSource.Add(ClassGlobalVariables.listPublicObjectives()[i].Index, ClassGlobalVariables.listPublicObjectives()[i].Name);
                     if (ClassGlobalVariables.listPublicObjectives()[i].Index == this.returnValue)

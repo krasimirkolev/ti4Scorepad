@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ti4Scorepad
 {
-    public struct PublicObjective
+    public struct PublicObjectiveStruct
     {
         // name, phase, description, points
         public string Name;
@@ -15,7 +15,8 @@ namespace ti4Scorepad
         public string Points;
         public int Index;
 
-        public PublicObjective(string name, string phase, string description, string points, int index) {
+        public PublicObjectiveStruct(string name, string phase, string description, string points, int index)
+        {
             Name = name;
             Phase = phase;
             Description = description;
@@ -77,83 +78,67 @@ namespace ti4Scorepad
                 {23, "The Yssaril Tribes"}
             };
         }
-        public static PublicObjective[] listPublicObjectives()
+        public static PublicObjectiveStruct[] listPublicObjectives()
         {
             // name, phase, description, points
-            return new PublicObjective[] {
+            return new PublicObjectiveStruct[] {
                 // 1 pointers
-                new PublicObjective("POPULATE THE OUTER RIM", "STATUS PHASE", "Have unist in 3 systems on the edge of the game board other than your home system", "1", 0),
-                new PublicObjective("ENGINEER A MARVEL", "STATUS PHASE", "Have your flagship or a war sun on the game board", "1", 1),
-                new PublicObjective("BUILD DEFENCES", "STATUS PHASE", "Have 4 or more structures", "1", 2),
-                new PublicObjective("EXPLORE DEEP SPACE", "STATUS PHASE", "Have unist in 3 systems that do not contain planets", "1", 3),
-                new PublicObjective("EXPAND BORDERS", "STATUS PHASE", "Control 6 planets in non-home systems", "1", 4),
-                new PublicObjective("INTIMIDATE COUNCIL", "STATUS PHASE", "Have 1 or more ships in 2 systems that are adjacentto MecatolRex's system", "1", 5),
-                new PublicObjective("FOUND RESEARCH OUTPOSTS", "STATUS PHASE", "Control 3 planets that have technology specialties", "1", 6),
-                new PublicObjective("CORNER THE MARKET", "STATUS PHASE", "Control 4 planets that eachhave same planet trait", "1", 7),
-                new PublicObjective("SWAY THE COUNCIL", "STATUS PHASE", "Spend 8 influence", "1", 8),
-                new PublicObjective("PUSH BOUNDARIES", "STATUS PHASE", "Control more planets than each of 2 of your neighbors", "1", 9),
-                new PublicObjective("MAKE HISTORY", "STATUS PHASE", "Have units in 2 systems that contain legendary planets, Mecatol Rex or anomalies", "1", 10),
-                new PublicObjective("LEAD FROM THE FRONT", "STATUS PHASE", "Spend a total of 3 tokens frmo your tactic and/or strategy pools", "1", 11),
-                new PublicObjective("DEVELOP WEAPONRY", "STATUS PHASE", "Own 2 unit upgrade technologies", "1", 12),
-                new PublicObjective("NEGOTIATE TRADE ROUTES", "STATUS PHASE", "Spend 5 trade goods", "1", 13),
-                new PublicObjective("DIVERSIFY RESEARCH", "STATUS PHASE", "Own 2 technologies in eachof 2 colors", "1", 14),
-                new PublicObjective("DISCOVER LOST OUTPOSTS", "STATUS PHASE", "Control 2 planets that have attachments", "1", 15),
-                new PublicObjective("RAISE A FLEET", "STATUS PHASE", "Have 5 or more non-fighter ships in 1 system", "1", 16),
-                new PublicObjective("AMASS WEALTH", "STATUS PHASE", "Spend 3 influence, 3 resources, and 3 trade goods", "1", 17),
-                new PublicObjective("IMPROVE INFRASTRUCTURE", "STATUS PHASE", "Have structures on 3 planets outside of your home system", "1", 18),
-                new PublicObjective("ERECT A MONUMENTS", "STATUS PHASE", "Spend 8 resources", "1", 19),
+                new PublicObjectiveStruct("POPULATE THE OUTER RIM", "STATUS PHASE", "Have unist in 3 systems on the edge of the game board other than your home system", "1", 0),
+                new PublicObjectiveStruct("ENGINEER A MARVEL", "STATUS PHASE", "Have your flagship or a war sun on the game board", "1", 1),
+                new PublicObjectiveStruct("BUILD DEFENCES", "STATUS PHASE", "Have 4 or more structures", "1", 2),
+                new PublicObjectiveStruct("EXPLORE DEEP SPACE", "STATUS PHASE", "Have unist in 3 systems that do not contain planets", "1", 3),
+                new PublicObjectiveStruct("EXPAND BORDERS", "STATUS PHASE", "Control 6 planets in non-home systems", "1", 4),
+                new PublicObjectiveStruct("INTIMIDATE COUNCIL", "STATUS PHASE", "Have 1 or more ships in 2 systems that are adjacentto MecatolRex's system", "1", 5),
+                new PublicObjectiveStruct("FOUND RESEARCH OUTPOSTS", "STATUS PHASE", "Control 3 planets that have technology specialties", "1", 6),
+                new PublicObjectiveStruct("CORNER THE MARKET", "STATUS PHASE", "Control 4 planets that eachhave same planet trait", "1", 7),
+                new PublicObjectiveStruct("SWAY THE COUNCIL", "STATUS PHASE", "Spend 8 influence", "1", 8),
+                new PublicObjectiveStruct("PUSH BOUNDARIES", "STATUS PHASE", "Control more planets than each of 2 of your neighbors", "1", 9),
+                new PublicObjectiveStruct("MAKE HISTORY", "STATUS PHASE", "Have units in 2 systems that contain legendary planets, Mecatol Rex or anomalies", "1", 10),
+                new PublicObjectiveStruct("LEAD FROM THE FRONT", "STATUS PHASE", "Spend a total of 3 tokens frmo your tactic and/or strategy pools", "1", 11),
+                new PublicObjectiveStruct("DEVELOP WEAPONRY", "STATUS PHASE", "Own 2 unit upgrade technologies", "1", 12),
+                new PublicObjectiveStruct("NEGOTIATE TRADE ROUTES", "STATUS PHASE", "Spend 5 trade goods", "1", 13),
+                new PublicObjectiveStruct("DIVERSIFY RESEARCH", "STATUS PHASE", "Own 2 technologies in eachof 2 colors", "1", 14),
+                new PublicObjectiveStruct("DISCOVER LOST OUTPOSTS", "STATUS PHASE", "Control 2 planets that have attachments", "1", 15),
+                new PublicObjectiveStruct("RAISE A FLEET", "STATUS PHASE", "Have 5 or more non-fighter ships in 1 system", "1", 16),
+                new PublicObjectiveStruct("AMASS WEALTH", "STATUS PHASE", "Spend 3 influence, 3 resources, and 3 trade goods", "1", 17),
+                new PublicObjectiveStruct("IMPROVE INFRASTRUCTURE", "STATUS PHASE", "Have structures on 3 planets outside of your home system", "1", 18),
+                new PublicObjectiveStruct("ERECT A MONUMENT", "STATUS PHASE", "Spend 8 resources", "1", 19),
                 // 2 pointers
-                new PublicObjective("CONSTRUCT MASSIVE CITIES", "STATUS PHASE", "Have 7 or more structures", "2", 20),
-                new PublicObjective("MASTER THE SCIENCES", "STATUS PHASE", "Own 2 technologies in each of 4 colors", "2", 21),
-                new PublicObjective("SUBDUE THE GALAXY", "STATUS PHASE", "Control 11 planets in non-home systems", "2", 22),
-                new PublicObjective("GALVANIZE THE PEOPLE", "STATUS PHASE", "Spend a total of 6 tokens from your tactic and/or strategy pools", "2", 23),
-                new PublicObjective("UNIFY THE COLONIES", "STATUS PHASE", "Control 6 planets that each have the same planet trait", "2", 24),
-                new PublicObjective("CENTRALIZE GALACTIC TRADE", "STATUS PHASE", "Spend 10 trade goods", "2", 25),
-                new PublicObjective("ACHIEVE SUPREMACY", "STATUS PHASE", "Have your flagship or a war sun in another player's home system or the Mecatol Rex system", "2", 26),
-                new PublicObjective("FOUND A GOLDEN AGE", "STATUS PHASE", "Spend 16 resources", "2", 27),
-                new PublicObjective("FORM GALACTIC BRAIN TRUST", "STATUS PHASE", "Control 5 planets that have technology specialties", "2", 28),
-                new PublicObjective("MANIPULATE GALACTIC LAW", "STATUS PHASE", "Spend 16 influence", "2", 29),
-                new PublicObjective("RECLAIM ANCIENT MONUMENTS", "STATUS PHASE", "Control 3 planets that have attachments", "2", 30),
-                new PublicObjective("HOLD VAST RESERVES", "STATUS PHASE", "Spend 6 influence, 6 resources, and 6 trade goods", "2", 31),
-                new PublicObjective("CONTROL THE BORDERLANDS", "STATUS PHASE", "Have units in 5 systems on the edge of the game board other than your home system", "2", 32),
-                new PublicObjective("PROTECT THE BORDER", "STATUS PHASE", "Have structures on 5 planets outside of your home system", "2", 33),
-                new PublicObjective("PATROL VAST TERRITORIES", "STATUS PHASE", "Have units in 5 systems that do not contain planets", "2", 34),
-                new PublicObjective("BECOME A LEGEND", "STATUS PHASE", "Have units in 4 systems that contain legendary planets, Mecatol Rex or anomalies", "2", 35),
-                new PublicObjective("CONQUER THE WEAK", "STATUS PHASE", "Control 1 planet that is in another player's home system", "2", 36),
-                new PublicObjective("REVOLUTIONIZE WARFARE", "STATUS PHASE", "Own 3 unit upgrade technologies", "2", 37),
-                new PublicObjective("RULE DISTANT LANDS", "STATUS PHASE", "Control 2 planets that are each in or adjacent to a different, other player's home system", "2", 38),
-                new PublicObjective("COMMAND AN ARMADA", "STATUS PHASE", "Have 8 or more non-fighter ships in 1 system", "2", 39)
+                new PublicObjectiveStruct("CONSTRUCT MASSIVE CITIES", "STATUS PHASE", "Have 7 or more structures", "2", 20),
+                new PublicObjectiveStruct("MASTER THE SCIENCES", "STATUS PHASE", "Own 2 technologies in each of 4 colors", "2", 21),
+                new PublicObjectiveStruct("SUBDUE THE GALAXY", "STATUS PHASE", "Control 11 planets in non-home systems", "2", 22),
+                new PublicObjectiveStruct("GALVANIZE THE PEOPLE", "STATUS PHASE", "Spend a total of 6 tokens from your tactic and/or strategy pools", "2", 23),
+                new PublicObjectiveStruct("UNIFY THE COLONIES", "STATUS PHASE", "Control 6 planets that each have the same planet trait", "2", 24),
+                new PublicObjectiveStruct("CENTRALIZE GALACTIC TRADE", "STATUS PHASE", "Spend 10 trade goods", "2", 25),
+                new PublicObjectiveStruct("ACHIEVE SUPREMACY", "STATUS PHASE", "Have your flagship or a war sun in another player's home system or the Mecatol Rex system", "2", 26),
+                new PublicObjectiveStruct("FOUND A GOLDEN AGE", "STATUS PHASE", "Spend 16 resources", "2", 27),
+                new PublicObjectiveStruct("FORM GALACTIC BRAIN TRUST", "STATUS PHASE", "Control 5 planets that have technology specialties", "2", 28),
+                new PublicObjectiveStruct("MANIPULATE GALACTIC LAW", "STATUS PHASE", "Spend 16 influence", "2", 29),
+                new PublicObjectiveStruct("RECLAIM ANCIENT MONUMENTS", "STATUS PHASE", "Control 3 planets that have attachments", "2", 30),
+                new PublicObjectiveStruct("HOLD VAST RESERVES", "STATUS PHASE", "Spend 6 influence, 6 resources, and 6 trade goods", "2", 31),
+                new PublicObjectiveStruct("CONTROL THE BORDERLANDS", "STATUS PHASE", "Have units in 5 systems on the edge of the game board other than your home system", "2", 32),
+                new PublicObjectiveStruct("PROTECT THE BORDER", "STATUS PHASE", "Have structures on 5 planets outside of your home system", "2", 33),
+                new PublicObjectiveStruct("PATROL VAST TERRITORIES", "STATUS PHASE", "Have units in 5 systems that do not contain planets", "2", 34),
+                new PublicObjectiveStruct("BECOME A LEGEND", "STATUS PHASE", "Have units in 4 systems that contain legendary planets, Mecatol Rex or anomalies", "2", 35),
+                new PublicObjectiveStruct("CONQUER THE WEAK", "STATUS PHASE", "Control 1 planet that is in another player's home system", "2", 36),
+                new PublicObjectiveStruct("REVOLUTIONIZE WARFARE", "STATUS PHASE", "Own 3 unit upgrade technologies", "2", 37),
+                new PublicObjectiveStruct("RULE DISTANT LANDS", "STATUS PHASE", "Control 2 planets that are each in or adjacent to a different, other player's home system", "2", 38),
+                new PublicObjectiveStruct("COMMAND AN ARMADA", "STATUS PHASE", "Have 8 or more non-fighter ships in 1 system", "2", 39)
             };
         }
 
-        public static List<ti4Scorepad.publicObjective> emptyPublicObjectives() {
-            return new List<ti4Scorepad.publicObjective>()
-            {
-                new ti4Scorepad.publicObjective(0),
-                new ti4Scorepad.publicObjective(1),
-                new ti4Scorepad.publicObjective(2),
-                new ti4Scorepad.publicObjective(3),
-                new ti4Scorepad.publicObjective(4),
-                new ti4Scorepad.publicObjective(5),
-                new ti4Scorepad.publicObjective(6),
-                new ti4Scorepad.publicObjective(7),
-                new ti4Scorepad.publicObjective(8),
-                new ti4Scorepad.publicObjective(9)
-            };
-        }
-
-        public static int[,] positionsStaticPublicObjectives() {
+        public static int[,] staticPublicObjectivesData() {
             return new int[,]{
-                {10, 250},
-                {170, 250},
-                {330, 250},
-                {490, 250},
-                {650, 250},
-                {10, 520},
-                {170, 520},
-                {330, 520},
-                {490, 520},
-                {650, 520}
+                {10, 250, 1},
+                {170, 250, 1},
+                {330, 250, 1},
+                {490, 250, 1},
+                {650, 250, 1},
+                {10, 520, 2},
+                {170, 520, 2},
+                {330, 520, 2},
+                {490, 520, 2},
+                {650, 520, 2}
             };
         }
 

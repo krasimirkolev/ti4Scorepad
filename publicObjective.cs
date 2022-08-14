@@ -16,11 +16,14 @@ namespace ti4Scorepad
         int displayIndex;
         int index = -1;
         int publicObjectiveIndex = -1;
-        public publicObjective(int index)
+        int Points = 0;
+        public publicObjective(int index, int points)
         {
             InitializeComponent();
             this.MouseDown += new MouseEventHandler(publicObjective_MouseButton);
             this.displayIndex = index;
+            this.Points = points;
+            this.labelPoints.Text = points.ToString();
         }
 
         public Dictionary<string, int> size
@@ -38,20 +41,19 @@ namespace ti4Scorepad
             this.textBoxTitle.Text = name;
             this.labelPhase.Text = phase;
             this.textBoxDescription.Text = description;
-            this.labelPoints.Text = points;
         }
         public void publicObjective_MouseButton(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                FormPublicObjectiveSelector publicObjectiveSelector = new FormPublicObjectiveSelector(this.index);
+                FormPublicObjectiveSelector publicObjectiveSelector = new FormPublicObjectiveSelector(this.index, this.Points);
                 if (publicObjectiveSelector.ShowDialog() == DialogResult.OK) {
                     if (this.publicObjectiveIndex != -1) {
                         ClassGlobalVariables.removePublicObjectiveInPlay(this.publicObjectiveIndex);
                     }
                     this.publicObjectiveIndex = publicObjectiveSelector.returnValue;
                     ClassGlobalVariables.addPublicObjectiveInPlay(publicObjectiveIndex);
-                    PublicObjective publicObjective = ClassGlobalVariables.listPublicObjectives()[this.publicObjectiveIndex];
+                    PublicObjectiveStruct publicObjective = ClassGlobalVariables.listPublicObjectives()[this.publicObjectiveIndex];
                     this.textBoxTitle.Text = publicObjective.Name;
                     this.labelPhase.Text = publicObjective.Phase;
                     this.textBoxDescription.Text = publicObjective.Description;
