@@ -77,11 +77,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 741);
+            this.ClientSize = new System.Drawing.Size(1592, 997);
             this.Controls.Add(this.buttonAddRaceInPlay);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Twilight Imperium 4 scorepad";
             this.ResumeLayout(false);
 
@@ -90,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonAddRaceInPlay;
-        private System.Windows.Forms.ImageList imageListRaces;
+        public System.Windows.Forms.ImageList imageListRaces;
 
 
 

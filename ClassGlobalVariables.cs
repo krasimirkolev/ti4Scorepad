@@ -1,11 +1,12 @@
-﻿using System;
+﻿// using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+// using System.Linq;
+// using System.Text;
+// using System.Threading.Tasks;
 
 namespace ti4Scorepad
 {
+
     public struct PublicObjectiveStruct
     {
         // name, phase, description, points
@@ -80,15 +81,15 @@ namespace ti4Scorepad
         }
         public static PublicObjectiveStruct[] listPublicObjectives()
         {
-            // name, phase, description, points
+            // name, phase, description, points, index
             return new PublicObjectiveStruct[] {
                 // 1 pointers
-                new PublicObjectiveStruct("POPULATE THE OUTER RIM", "STATUS PHASE", "Have unist in 3 systems on the edge of the game board other than your home system", "1", 0),
+                new PublicObjectiveStruct("POPULATE THE OUTER RIM", "STATUS PHASE", "Have units in 3 systems on the edge of the game board other than your home system", "1", 0),
                 new PublicObjectiveStruct("ENGINEER A MARVEL", "STATUS PHASE", "Have your flagship or a war sun on the game board", "1", 1),
                 new PublicObjectiveStruct("BUILD DEFENCES", "STATUS PHASE", "Have 4 or more structures", "1", 2),
-                new PublicObjectiveStruct("EXPLORE DEEP SPACE", "STATUS PHASE", "Have unist in 3 systems that do not contain planets", "1", 3),
+                new PublicObjectiveStruct("EXPLORE DEEP SPACE", "STATUS PHASE", "Have units in 3 systems that do not contain planets", "1", 3),
                 new PublicObjectiveStruct("EXPAND BORDERS", "STATUS PHASE", "Control 6 planets in non-home systems", "1", 4),
-                new PublicObjectiveStruct("INTIMIDATE COUNCIL", "STATUS PHASE", "Have 1 or more ships in 2 systems that are adjacentto MecatolRex's system", "1", 5),
+                new PublicObjectiveStruct("INTIMIDATE COUNCIL", "STATUS PHASE", "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's system", "1", 5),
                 new PublicObjectiveStruct("FOUND RESEARCH OUTPOSTS", "STATUS PHASE", "Control 3 planets that have technology specialties", "1", 6),
                 new PublicObjectiveStruct("CORNER THE MARKET", "STATUS PHASE", "Control 4 planets that eachhave same planet trait", "1", 7),
                 new PublicObjectiveStruct("SWAY THE COUNCIL", "STATUS PHASE", "Spend 8 influence", "1", 8),
@@ -128,17 +129,19 @@ namespace ti4Scorepad
         }
 
         public static int[,] staticPublicObjectivesData() {
+            // returns:
+            // left, top, points
             return new int[,]{
                 {10, 250, 1},
-                {170, 250, 1},
-                {330, 250, 1},
-                {490, 250, 1},
-                {650, 250, 1},
+                {310, 250, 1},
+                {610, 250, 1},
+                {910, 250, 1},
+                {1210, 250, 1},
                 {10, 520, 2},
-                {170, 520, 2},
-                {330, 520, 2},
-                {490, 520, 2},
-                {650, 520, 2}
+                {310, 520, 2},
+                {610, 520, 2},
+                {910, 520, 2},
+                {1210, 520, 2}
             };
         }
 

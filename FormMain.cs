@@ -16,13 +16,13 @@ namespace ti4Scorepad
         public FormMain()
         {
             InitializeComponent();
-            int screenWidth = this.Width;
-            int screenHeight = this.Height;
+            // int screenWidth = this.Width;
+            // int screenHeight = this.Height;
 
             int[,] staticPublicObjectivesData = ClassGlobalVariables.staticPublicObjectivesData();
             for (int i = 0; i < 10; i++)
             {
-                publicObjective emptyPublicObjective = new publicObjective(i, staticPublicObjectivesData[i, 2]);
+                publicObjective emptyPublicObjective = new publicObjective(i, staticPublicObjectivesData[i, 2], ref this.imageListRaces);
                 emptyPublicObjective.Location = new System.Drawing.Point(staticPublicObjectivesData[i, 0], staticPublicObjectivesData[i, 1]);
                 emptyPublicObjective.Name = "publicObjective";
                 this.Controls.Add(emptyPublicObjective);

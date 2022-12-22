@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassGlobalVariables.cs" />
-    <Compile Include="FormPublicObjectiveSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPublicObjectiveSelector.Designer.cs">
-      <DependentUpon>FormPublicObjectiveSelector.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +73,14 @@
     <Compile Include="race.Designer.cs">
       <DependentUpon>race.cs</DependentUpon>
     </Compile>
+    <Compile Include="racesScored.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="racesScored.Designer.cs">
+      <DependentUpon>racesScored.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPublicObjectiveSelector.resx">
-      <DependentUpon>FormPublicObjectiveSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRaceSelector.resx">
       <DependentUpon>FormRaceSelector.cs</DependentUpon>
@@ -100,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="race.resx">
       <DependentUpon>race.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="racesScored.resx">
+      <DependentUpon>racesScored.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

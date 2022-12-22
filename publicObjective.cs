@@ -7,62 +7,77 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Windows.Forms.MouseEventArgs;
 
 namespace ti4Scorepad
 {
     public partial class publicObjective : UserControl
     {
-        int displayIndex;
-        int index = -1;
-        int publicObjectiveIndex = -1;
+        int index;
         int Points = 0;
-        public publicObjective(int index, int points)
+
+        public publicObjective(int index, int points, ref ImageList imageList)
         {
             InitializeComponent();
             this.MouseDown += new MouseEventHandler(publicObjective_MouseButton);
-            this.displayIndex = index;
+            
+            this.index = -1;
             this.Points = points;
             this.labelPoints.Text = points.ToString();
+            racesScored racesScored = new racesScored(imageList);
+            racesScored.Location = new System.Drawing.Point(3, 132);
+            this.Controls.Add(racesScored);
         }
 
         public Dictionary<string, int> size
         {
             get {
-                int width = this.Width;
-                int height = this.Height;
                 Dictionary<string, int> size = new Dictionary<string, int>();
-                size.Add("width", width);
-                size.Add("height", height);
+                size.Add("width", this.Width);
+                size.Add("height", this.Height);
                 return size;
             }
         }
-        public void setNew(string name, string phase, string description, string points) {
-            this.textBoxTitle.Text = name;
-            this.labelPhase.Text = phase;
-            this.textBoxDescription.Text = description;
-        }
-        public void publicObjective_MouseButton(object sender, System.Windows.Forms.MouseEventArgs e)
+
+        public void publicObjective_MouseButton(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                FormPublicObjectiveSelector publicObjectiveSelector = new FormPublicObjectiveSelector(this.index, this.Points);
-                if (publicObjectiveSelector.ShowDialog() == DialogResult.OK) {
-                    if (this.publicObjectiveIndex != -1) {
-                        ClassGlobalVariables.removePublicObjectiveInPlay(this.publicObjectiveIndex);
+                contextMenuPublicObjectives.Items.Clear();
+
+                List<int> publicObjectivesInPlay = ClassGlobalVariables.getPublicObjectivesInPlay();
+                Dictionary<int, string> contextMenuSource = new Dictionary<int, string>();
+                for (int i = 0; i < ClassGlobalVariables.listPublicObjectives().Length; i++)
+                {
+                    if (!publicObjectivesInPlay.Contains(i) && ClassGlobalVariables.listPublicObjectives()[i].Points == this.Points.ToString())
+                    {
+                        ToolStripMenuItem newItem = new ToolStripMenuItem()
+                        {
+                            Text = ClassGlobalVariables.listPublicObjectives()[i].Name,
+                            Name = ClassGlobalVariables.listPublicObjectives()[i].Index.ToString()
+                        };
+                        contextMenuPublicObjectives.Items.Add(newItem);
                     }
-                    this.publicObjectiveIndex = publicObjectiveSelector.returnValue;
-                    ClassGlobalVariables.addPublicObjectiveInPlay(publicObjectiveIndex);
-                    PublicObjectiveStruct publicObjective = ClassGlobalVariables.listPublicObjectives()[this.publicObjectiveIndex];
-                    this.textBoxTitle.Text = publicObjective.Name;
-                    this.labelPhase.Text = publicObjective.Phase;
-                    this.textBoxDescription.Text = publicObjective.Description;
-                    this.labelPoints.Text = publicObjective.Points;
-                    this.index = publicObjectiveSelector.returnValue;
-                    this.Name = "publicObjective" + publicObjectiveSelector.returnValue;
                 }
-                
             }
+
+        }
+
+        private void contextMenuPublicObjectives_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // set public objective
+            int index = Int32.Parse(e.ClickedItem.Name);
+            if (this.index != -1)
+            {
+                ClassGlobalVariables.removePublicObjectiveInPlay(this.index);
+            }
+            ClassGlobalVariables.addPublicObjectiveInPlay(index);
+            PublicObjectiveStruct publicObjective = ClassGlobalVariables.listPublicObjectives()[index];
+            this.textBoxTitle.Text = publicObjective.Name;
+            this.labelPhase.Text = publicObjective.Phase;
+            this.textBoxDescription.Text = publicObjective.Description;
+            this.labelPoints.Text = publicObjective.Points;
+            this.index = index;
+            this.Name = "publicObjective" + index.ToString();
         }
 
     }
