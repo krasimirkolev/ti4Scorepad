@@ -91,7 +91,7 @@ namespace ti4Scorepad
                 new PublicObjectiveStruct("EXPAND BORDERS", "STATUS PHASE", "Control 6 planets in non-home systems", "1", 4),
                 new PublicObjectiveStruct("INTIMIDATE COUNCIL", "STATUS PHASE", "Have 1 or more ships in 2 systems that are adjacent to Mecatol Rex's system", "1", 5),
                 new PublicObjectiveStruct("FOUND RESEARCH OUTPOSTS", "STATUS PHASE", "Control 3 planets that have technology specialties", "1", 6),
-                new PublicObjectiveStruct("CORNER THE MARKET", "STATUS PHASE", "Control 4 planets that eachhave same planet trait", "1", 7),
+                new PublicObjectiveStruct("CORNER THE MARKET", "STATUS PHASE", "Control 4 planets that each have same planet trait", "1", 7),
                 new PublicObjectiveStruct("SWAY THE COUNCIL", "STATUS PHASE", "Spend 8 influence", "1", 8),
                 new PublicObjectiveStruct("PUSH BOUNDARIES", "STATUS PHASE", "Control more planets than each of 2 of your neighbors", "1", 9),
                 new PublicObjectiveStruct("MAKE HISTORY", "STATUS PHASE", "Have units in 2 systems that contain legendary planets, Mecatol Rex or anomalies", "1", 10),

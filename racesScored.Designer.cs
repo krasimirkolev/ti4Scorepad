@@ -51,79 +51,95 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(39, 0);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(75, 0);
+            this.pictureBox3.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(111, 0);
+            this.pictureBox4.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(147, 0);
+            this.pictureBox5.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox5.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(183, 0);
+            this.pictureBox6.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 5;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(219, 0);
+            this.pictureBox7.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox7.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(255, 0);
+            this.pictureBox8.MaximumSize = new System.Drawing.Size(30, 65);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(30, 65);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.pictureBox8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             // 
             // contextMenuRaces
             // 
             this.contextMenuRaces.Name = "contextMenuRaces";
-            this.contextMenuRaces.Size = new System.Drawing.Size(153, 26);
+            this.contextMenuRaces.Size = new System.Drawing.Size(61, 4);
             this.contextMenuRaces.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuRaces_ItemClicked);
             // 
             // racesScored
@@ -131,7 +147,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ContextMenuStrip = this.contextMenuRaces;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
@@ -142,7 +157,7 @@
             this.Controls.Add(this.pictureBox8);
             this.Name = "racesScored";
             this.Size = new System.Drawing.Size(289, 65);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_MouseClick);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.this_OpenContextMenu);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

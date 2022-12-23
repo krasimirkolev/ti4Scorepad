@@ -14,7 +14,7 @@ namespace ti4Scorepad
     {
         int index;
         int Points = 0;
-
+        PublicObjectiveStruct[] listPublicObjectives = ClassGlobalVariables.listPublicObjectives();
         public publicObjective(int index, int points, ref ImageList imageList)
         {
             InitializeComponent();
@@ -23,20 +23,20 @@ namespace ti4Scorepad
             this.index = -1;
             this.Points = points;
             this.labelPoints.Text = points.ToString();
-            racesScored racesScored = new racesScored(imageList);
+            racesScored racesScored = new racesScored(ref imageList);
             racesScored.Location = new System.Drawing.Point(3, 132);
             this.Controls.Add(racesScored);
         }
 
-        public Dictionary<string, int> size
-        {
-            get {
-                Dictionary<string, int> size = new Dictionary<string, int>();
-                size.Add("width", this.Width);
-                size.Add("height", this.Height);
-                return size;
-            }
-        }
+        //public Dictionary<string, int> size
+        //{
+        //    get {
+        //        Dictionary<string, int> size = new Dictionary<string, int>();
+        //        size.Add("width", this.Width);
+        //        size.Add("height", this.Height);
+        //        return size;
+        //    }
+        //}
 
         public void publicObjective_MouseButton(object sender, MouseEventArgs e)
         {
@@ -45,19 +45,19 @@ namespace ti4Scorepad
                 contextMenuPublicObjectives.Items.Clear();
 
                 List<int> publicObjectivesInPlay = ClassGlobalVariables.getPublicObjectivesInPlay();
-                Dictionary<int, string> contextMenuSource = new Dictionary<int, string>();
                 for (int i = 0; i < ClassGlobalVariables.listPublicObjectives().Length; i++)
                 {
-                    if (!publicObjectivesInPlay.Contains(i) && ClassGlobalVariables.listPublicObjectives()[i].Points == this.Points.ToString())
+                    if (!publicObjectivesInPlay.Contains(i) && this.listPublicObjectives[i].Points == this.Points.ToString())
                     {
                         ToolStripMenuItem newItem = new ToolStripMenuItem()
                         {
-                            Text = ClassGlobalVariables.listPublicObjectives()[i].Name,
-                            Name = ClassGlobalVariables.listPublicObjectives()[i].Index.ToString()
+                            Text = this.listPublicObjectives[i].Name,
+                            Name = this.listPublicObjectives[i].Index.ToString()
                         };
                         contextMenuPublicObjectives.Items.Add(newItem);
                     }
                 }
+                contextMenuPublicObjectives.Show(Cursor.Position);
             }
 
         }
@@ -71,7 +71,7 @@ namespace ti4Scorepad
                 ClassGlobalVariables.removePublicObjectiveInPlay(this.index);
             }
             ClassGlobalVariables.addPublicObjectiveInPlay(index);
-            PublicObjectiveStruct publicObjective = ClassGlobalVariables.listPublicObjectives()[index];
+            PublicObjectiveStruct publicObjective = this.listPublicObjectives[index];
             this.textBoxTitle.Text = publicObjective.Name;
             this.labelPhase.Text = publicObjective.Phase;
             this.textBoxDescription.Text = publicObjective.Description;

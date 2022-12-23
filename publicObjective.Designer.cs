@@ -97,6 +97,7 @@
             this.textBoxDescription.Size = new System.Drawing.Size(280, 60);
             this.textBoxDescription.TabIndex = 9;
             this.textBoxDescription.Text = "UNKNOWN";
+            this.textBoxDescription.MouseClick += new System.Windows.Forms.MouseEventHandler(this.publicObjective_MouseButton);
             // 
             // shapeContainer1
             // 
@@ -130,7 +131,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ContextMenuStrip = this.contextMenuPublicObjectives;
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.labelStatic);
